@@ -18,9 +18,10 @@ import pandas as pd
 from datetime import datetime, timedelta
 import time
 import json
+from weave_integration import WeaveTrackedCustomerSuccessCopilot
 
 # Import your agent
-from customer_success_agent import CustomerSuccessCopilot, CustomerProfile
+from customer_success_agent import CustomerProfile
 from sample_data import SAMPLE_EMAILS, DEMO_SCENARIOS, get_demo_email
 
 # Page configuration
@@ -73,7 +74,7 @@ def initialize_session_state():
     """Initialize session state variables"""
     if 'agent' not in st.session_state:
         try:
-            st.session_state.agent = CustomerSuccessCopilot()
+            st.session_state.agent = WeaveTrackedCustomerSuccessCopilot()
             st.session_state.agent_ready = True
         except Exception as e:
             st.session_state.agent_ready = False

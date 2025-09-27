@@ -5,7 +5,7 @@ Verify everything works before building the demo interface
 
 import os
 from dotenv import load_dotenv
-from customer_success_agent import CustomerSuccessCopilot
+from weave_integration import WeaveTrackedCustomerSuccessCopilot as CustomerSuccessCopilot
 from sample_data import SAMPLE_EMAILS, get_demo_email
 
 load_dotenv()
